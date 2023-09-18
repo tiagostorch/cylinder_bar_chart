@@ -45,137 +45,68 @@ void  main() {
 runApp(CylinderBarChart(
 
 dates: [
-
 DateTime.now(),
-
 DateTime.now(),
-
 DateTime.now(),
-
 DateTime.now(),
-
 DateTime.now(),
-
 DateTime.now(),
-
 DateTime.now()
-
 ],
-
 values:  const [150.0, 200.0, 23.0, 100.0, 145.0, 77, 53],
-
 ));
-
 }
 
   
-
 class  CylinderBarChart  extends  StatelessWidget {
-
 const  CylinderBarChart({
-
 super.key,
-
 required  this.dates,
-
 required  this.values,
-
 this.mainColor =  const  Color(0xff73B3FE),
-
 this.accentColor =  const  Color(0xff258AFE),
-
 this.separator,
-
 });
-
 final  List<DateTime> dates;
-
 final  List<double> values;
-
 final  Color mainColor;
-
 final  Color accentColor;
-
 final  Widget? separator;
-
 @override
 
 Widget  build(BuildContext context) {
-
 double maxValue = values.reduce((curr, next) => curr > next ? curr : next);
-
 return  MaterialApp(
-
 title:  'Flutter Demo',
-
 theme:  ThemeData(
-
 colorScheme:  ColorScheme.fromSeed(seedColor:  Colors.deepPurple),
-
 useMaterial3:  true,
-
 ),
-
 home:  Scaffold(
-
-appBar:  AppBar(
-
-title:  const  Text('Bite me'),
-
-),
-
+appBar:  AppBar(title:  const  Text('Bite me'),),
 body:  ListView.separated(
-
 scrollDirection:  Axis.horizontal,
-
 itemBuilder: (context, index) {
-
 return  Column(
-
 children: [
-
-Text(
-
-values[index].toString(),
-
-),
-
+Text(values[index].toString(),),
 CylinderBar(
-
 value: values[index],
-
 maxValue: maxValue,
-
 mainColor: mainColor,
-
 accentColor: accentColor,
-
 ),
-
-Text(
-
-"${dates[index].day}/${dates[index].month}",
-
-),
-
+Text("${dates[index].day}/${dates[index].month}",),
 ],
-
 );
-
 },
 
 separatorBuilder: (context, index) => separator ??  const  Gap(12),
 
 itemCount: values.length,
 
-),
-
-),
-
-);
-
+),),);
 }
-
 }
 
   
