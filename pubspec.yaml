@@ -1,6 +1,6 @@
 name: cylinder_bar_chart
 description: A Cylinder bar chart.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/abdullahalwardi/cylinder_bar_chart
 
 environment:
@@ -22,19 +22,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-  plugin:
-    platforms:
-      android:
-        package: com.cylinderbarchart.package
-        pluginClass: CylinderBarChart
-      ios:
-        pluginClass: CylinderBarChart
-      macos:
-        pluginClass: CylinderBarChart
-      linux:
-        pluginClass: CylinderBarChart
-      windows:
-        pluginClass: CylinderBarChart
 
   # To add assets to your package, add an assets section, like this:
   # assets:
