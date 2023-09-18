@@ -19,17 +19,7 @@ class CylinderBarChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double maxValue = values.reduce((curr, next) => curr > next ? curr : next);
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Bite me'),
-        ),
-        body: ListView.separated(
+    return ListView.separated(
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return Column(
@@ -51,8 +41,6 @@ class CylinderBarChart extends StatelessWidget {
           },
           separatorBuilder: (context, index) => separator ?? const Gap(12),
           itemCount: values.length,
-        ),
-      ),
-    );
+        );
   }
 }

@@ -22,6 +22,20 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.cylinderbarchart.package
+        pluginClass: CylinderBarChart
+      ios:
+        package: com.cylinderbarchart.package
+        pluginClass: CylinderBarChart
+      macos:
+        pluginClass: CylinderBarChart
+      linux:
+        pluginClass: CylinderBarChart
+      windows:
+        pluginClass: CylinderBarChart
 
   # To add assets to your package, add an assets section, like this:
   # assets:
