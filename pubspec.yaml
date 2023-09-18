@@ -1,7 +1,7 @@
 name: cylinder_bar_chart
 description: A Cylinder bar chart.
 version: 0.0.1
-homepage:
+homepage: https://github.com/abdullahalwardi/cylinder_bar_chart
 
 environment:
   sdk: '>=3.1.1 <4.0.0'
