@@ -13,6 +13,10 @@ and the Flutter guide for
 
 A Cylinder bar chart package for flutter.
 
+## Instalation
+
+Add cylinder_bar_chart to your dependecies and then import the packege
+
 ## Getting started
 
 To use the cylinder bar chart you just have to pass both dates and values and you can customize the colors and seperator of the bar also.
@@ -25,6 +29,9 @@ To use the cylinder bar chart you just have to pass both dates and values and yo
 <td>
 
 ```dart
+import 'package:flutter/material.dart';
+import 'package:cylinder_bar_chart/cylinder_bar_chart.dart';
+
 void main() {
   runApp(CylinderBarChart(
     dates: [
