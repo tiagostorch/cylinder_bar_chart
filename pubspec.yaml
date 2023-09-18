@@ -28,7 +28,6 @@ flutter:
         package: com.cylinderbarchart.package
         pluginClass: CylinderBarChart
       ios:
-        package: com.cylinderbarchart.package
         pluginClass: CylinderBarChart
       macos:
         pluginClass: CylinderBarChart
