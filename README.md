@@ -34,80 +34,68 @@ To use the cylinder bar chart you just have to pass both dates and values and yo
 
 ```dart
 
-import  'package:flutter/material.dart';
+import 'package:cylinder_bar_chart/cylinder_bar_chart.dart';
+import 'package:flutter/material.dart';
 
-import  'package:cylinder_bar_chart/cylinder_bar_chart.dart';
-
-  
-
-void  main() {
-
-runApp(CylinderBarChart(
-
-dates: [
-DateTime.now(),
-DateTime.now(),
-DateTime.now(),
-DateTime.now(),
-DateTime.now(),
-DateTime.now(),
-DateTime.now()
-],
-values:  const [150.0, 200.0, 23.0, 100.0, 145.0, 77, 53],
-));
+void main() {
+  runApp(const MyApp());
 }
 
-  
-class  CylinderBarChart  extends  StatelessWidget {
-const  CylinderBarChart({
-super.key,
-required  this.dates,
-required  this.values,
-this.mainColor =  const  Color(0xff73B3FE),
-this.accentColor =  const  Color(0xff258AFE),
-this.separator,
-});
-final  List<DateTime> dates;
-final  List<double> values;
-final  Color mainColor;
-final  Color accentColor;
-final  Widget? separator;
-@override
-
-Widget  build(BuildContext context) {
-double maxValue = values.reduce((curr, next) => curr > next ? curr : next);
-return  MaterialApp(
-title:  'Flutter Demo',
-theme:  ThemeData(
-colorScheme:  ColorScheme.fromSeed(seedColor:  Colors.deepPurple),
-useMaterial3:  true,
-),
-home:  Scaffold(
-appBar:  AppBar(title:  const  Text('Bite me'),),
-body:  ListView.separated(
-scrollDirection:  Axis.horizontal,
-itemBuilder: (context, index) {
-return  Column(
-children: [
-Text(values[index].toString(),),
-CylinderBar(
-value: values[index],
-maxValue: maxValue,
-mainColor: mainColor,
-accentColor: accentColor,
-),
-Text("${dates[index].day}/${dates[index].month}",),
-],
-);
-},
-
-separatorBuilder: (context, index) => separator ??  const  Gap(12),
-
-itemCount: values.length,
-
-),),);
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
 }
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
 }
+
+class _MyHomePageState extends State<MyHomePage> {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      body: CylinderBarChart(dates: [
+        DateTime.now().subtract(const Duration(days: 6)),
+        DateTime.now().subtract(const Duration(days: 5)),
+        DateTime.now().subtract(const Duration(days: 4)),
+        DateTime.now().subtract(const Duration(days: 3)),
+        DateTime.now().subtract(const Duration(days: 2)),
+        DateTime.now().subtract(const Duration(days: 1)),
+        DateTime.now(),
+      ], values: const [
+        25.0,
+        50.0,
+        75.0,
+        100.0,
+        125.0,
+        150.0,
+        175.0,
+      ],
+      )
+    );
+  }
+}
+
 
   
 
@@ -124,7 +112,7 @@ itemCount: values.length,
 
 </table>
 
-  <td>
+
 
 ![Final result](http://67.217.62.164:6025/Images/Simulator%20Screenshot%20-%20iPhone%2014%20Pro%20-%202023-09-18%20at%2016.17.09--403bce52-e48e-4b59-bc3e-963f3bdf4c01.png)
 

@@ -1,6 +1,6 @@
 name: cylinder_bar_chart
 description: A Cylinder bar chart.
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/abdullahalwardi/cylinder_bar_chart
 
 environment:
