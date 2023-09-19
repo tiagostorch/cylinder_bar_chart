@@ -1,3 +1,3 @@
-## 0.0.1
+## 0.0.6
 
-The first Cylinder bar cahrt package for flutter.
+The first 3d bar cahrt package for flutter.
